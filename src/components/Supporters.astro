@@ -1,81 +1,67 @@
 ---
 ---
 <!-- Clients Section -->
-    <section id="clients" class="clients section" style="background-color: #ffffff;">
+<section id="clients" class="clients section" style="background-color: #ffffff;">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Supporters</h2>
-        <p style="color:#262f3b;">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Supporters</h2>
+    <p style="color:#262f3b;">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+  </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "centeredSlides": true,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": { "slidesPerView": 2, "spaceBetween": 30 },
+            "480": { "slidesPerView": 3, "spaceBetween": 40 },
+            "640": { "slidesPerView": 4, "spaceBetween": 50 },
+            "992": { "slidesPerView": 5, "spaceBetween": 60 },
+            "1200": { "slidesPerView": 6, "spaceBetween": 80 }
+          }
+        }
+      </script>
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-        <div class="swiper-wrapper align-items-center">
-
-          <div class="swiper-slide text-center">
-            <a href="https://greenorbit.space" target="_blank" rel="noopener">
-              <img src="/img/clients/go-space.png" class="img-fluid client-logo" alt="Green Orbit Space">
-            </a>
-          </div>
-
-          <div class="swiper-slide text-center">
-            <a href="https://greenorbit.digital" target="_blank" rel="noopener">
-              <img src="/img/clients/go-digital.png" class="img-fluid client-logo" alt="Green Orbit Digital">
-            </a>
-          </div>
-
-          <div class="swiper-slide text-center">
-            <a href="https://greenorbit.academy" target="_blank" rel="noopener">
-              <img src="/img/clients/go-academy.png" class="img-fluid client-logo" alt="Green Orbit Academy">
-            </a>
-          </div>
-
-          <div class="swiper-slide text-center">
-            <a href="https://impactorbit.co" target="_blank" rel="noopener">
-              <img src="/img/clients/impact-orbit.png" class="img-fluid client-logo" alt="Impact Orbit Creative Group">
-            </a>
-          </div>
-
-        </div>
-        <div class="swiper-pagination"></div>
-
+      <div class="swiper-wrapper align-items-center">
+        <div class="swiper-slide text-center">
+          <a href="https://greenorbit.space" target="_blank" rel="noopener">
+            <img src="/img/clients/go-space.png" class="img-fluid client-logo" alt="Green Orbit Space">
+          </a>
         </div>
 
+        <div class="swiper-slide text-center">
+          <a href="https://greenorbit.digital" target="_blank" rel="noopener">
+            <img src="/img/clients/go-digital.png" class="img-fluid client-logo" alt="Green Orbit Digital">
+          </a>
+        </div>
+
+        <div class="swiper-slide text-center">
+          <a href="https://greenorbit.academy" target="_blank" rel="noopener">
+            <img src="/img/clients/go-academy.png" class="img-fluid client-logo" alt="Green Orbit Academy">
+          </a>
+        </div>
+
+        <div class="swiper-slide text-center">
+          <a href="https://impactorbit.co" target="_blank" rel="noopener">
+            <img src="/img/clients/impact-orbit.png" class="img-fluid client-logo" alt="Impact Orbit Creative Group">
+          </a>
+        </div>
       </div>
 
-    </section><!-- /Clients Section -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
