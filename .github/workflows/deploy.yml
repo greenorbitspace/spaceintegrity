@@ -17,19 +17,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies (if package.json exists)
-        run: |
-          if [ -f package.json ]; then
-            npm ci
-          fi
+      - name: Install dependencies
+        if: exists('package.json')
+        run: npm ci
 
-      - name: Build or copy files
+      - name: Build site or copy static files
         run: |
+          # Clean previous output
           rm -rf dist
           mkdir dist
 
@@ -46,13 +45,13 @@ jobs:
               -exec cp -R {} dist/ \;
           fi
 
-          # Ensure .nojekyll exists for Astro
+          # Add .nojekyll to prevent GitHub Pages from running Jekyll
           touch dist/.nojekyll
 
           echo "Dist directory contents:"
           ls -al dist
 
-      - name: Upload artifact
+      - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
