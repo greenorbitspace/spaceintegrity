@@ -14,14 +14,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 3. Install dependencies if package.json exists
       - name: Install dependencies
         run: |
           if [ -f package.json ]; then
@@ -31,6 +34,7 @@ jobs:
             echo "No package.json found → Skipping npm install"
           fi
 
+      # 4. Build site or copy static files
       - name: Build site or copy static files
         run: |
           # Clean previous output
@@ -50,12 +54,13 @@ jobs:
               -exec cp -R {} dist/ \;
           fi
 
-          # Add .nojekyll to prevent GitHub Pages from running Jekyll
+          # Add .nojekyll to prevent Jekyll processing
           touch dist/.nojekyll
 
           echo "Dist directory contents:"
           ls -al dist
 
+      # 5. Upload artifact for Pages
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
@@ -68,6 +73,7 @@ jobs:
       name: github-pages
 
     steps:
+      # 6. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
